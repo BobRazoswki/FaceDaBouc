@@ -1,12 +1,28 @@
 <h1> New post </h1>
 
-<%= form_for @article do |f| %>
+<%= form_for @article, html: { multipart: true } do |f| %>
 
- <%= f.label :title %>
- <%= f.text_field :title %>
+<% if @article.errors.any? %>
+  <article id="error_explanation">
+    <h2><%= pluralize(@article.errors.count, "error") %> prohibited
+      this articles from being saved:</h2>
+    <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </article>
+  <% end %>
 
- <%= f.label :content %>
- <%= f.text_area :content %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.label :picture %>
+  <%= f.file_field :picture %>
+
 
  <%= f.submit 'Submit post' %>
  

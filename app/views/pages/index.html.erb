@@ -1,3 +1,17 @@
 <h1> Yesh I </h1>
 
+<% if Article.all.any? %>
+	<% Article.all.each do |article| %>
+		<ul>
+			<li>
+				<%= article.title %> <br>
+				<%= article.content %><br>
+				<%= article.picture %> 
+			</li>
+		</ul>
+	<% end %>
+<% else %>
+	nothing yet
+<% end %>
+
 <%= render "articles/article_form" %>

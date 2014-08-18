@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
 
-	#before_action :authenticate_user!, except: [:index]
+	before_action :authenticate_user!, except: [:index]
 
 include ArticlesHelper
 
 	def index
-		@article = Article.all
+		@articles = Article.all
 	end
 
 	def new
