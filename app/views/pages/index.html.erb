@@ -5,8 +5,8 @@
 		<ul>
 			<li>
 				<%= article.title %> <br>
-				<%= article.content %><br>
-				<%= article.picture %> 
+				<%= article.content %><br> 
+				<%= image_tag article.picture.url(:medium), class: 'uploaded-pic' %>
 			</li>
 		</ul>
 	<% end %>

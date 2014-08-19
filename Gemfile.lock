@@ -12,6 +12,16 @@ GIT
       sass-rails
       sinatra
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: e8c1dc8a26183cf10e5eac7fb29eb7bdcf51d01f
+  specs:
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -47,6 +57,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    aws-sdk (1.51.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     backbone-on-rails (1.1.1.0)
       actionmailer
       actionpack
@@ -68,7 +81,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
     cliver (0.3.2)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -217,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
@@ -226,6 +244,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mad_chatter!
+  paperclip!
   pg
   poltergeist
   rails (= 4.1.4)
