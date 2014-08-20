@@ -29,7 +29,6 @@ describe 'tags' do
 			expect(page).to have_content('Articles with this hashtag:')
 		end
 
-
 		it 'go to a pretty url' do
 			visit('/tags/hash')
 			expect(page).to have_content('Articles with this hashtag:')
