@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
 
 	def index
-		@article = Article.new
+		@new_article = Article.new
+		@articles = Article.all
 	end
 
 end

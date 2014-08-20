@@ -5,13 +5,15 @@ class ArticlesController < ApplicationController
 include ArticlesHelper
 
 	def index
+		@new_article = Article.new
 		@articles = Article.all
-		@article = Article.new
 	end
 
 	def create
-		@article = Article.create(article_params)
-		@article.save ? redirect_to('/') : render('articles/_article_form')
+		@new_article = Article.new(params[:article].permit(:title, :content, :picture, :tag_list))
+		#@article = Article.create(article_params)
+		@new_article.save 
+		redirect_to('/') 
 	end
 
 end

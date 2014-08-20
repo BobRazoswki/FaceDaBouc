@@ -1,12 +1,15 @@
-<h1> Yesh I </h1>
+<h1> Booooob </h1>
 
-<% if Article.all.any? %>
-	<% Article.all.each do |article| %>
+<% if @articles.any? %>
+	<% @articles.each do |article| %>
 		<ul>
 			<li>
 				<%= article.title %> <br>
 				<%= article.content %><br> 
 				<%= image_tag article.picture.url(:medium), class: 'uploaded-pic' %>
+				<% article.tags.each do |tag|%>
+					<%= link_to tag.text, tag %>
+				<% end %>
 			</li>
 		</ul>
 	<% end %>

@@ -1,0 +1,53 @@
+SEED
+
+in many to many 
+
+Post.destroy_all
+Post.create(title: 'bob', picture: IO.read(Rails.root.join) )
+
+row bootstrap @posts.in_groups_of(x, false) do |sprockets|
+
+render sprockets
+
+end
+
+gem 'factory_girl_rails' dev and test env 
+lazy test writting gem 
+
+getting started => put the line in rails_helper
+
+define a usertype / restauranttype... 
+
+you just change it in one place and it is not breaking all of our test 
+
+create a folder spec/factories
+user.rb
+tag.rb
+post.rb 
+...
+FactoryGirl.define do
+	factory :user do
+	email 'bob'
+	...
+	end
+can do inheritance 
+	factory :talal do
+	email 'b@b.com'
+end
+
+
+end
+
+in the test @alex = create(:user) alex1 =create(:user1)
+
+create(:kfc, user: @alex)
+
+alex advice: 
+>no factories with unit test 
+>to understand a huge rails project take a look to the factories 
+
+<%= link_to(new_post_path, class: 'new-post') do %>
+<span class="glyphicon glyphicon-camera"></span>
+New Post
+<% end %>
+
